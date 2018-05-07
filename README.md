@@ -134,7 +134,7 @@ Now lets get expand on this. Lets working with branches now, remember how we tal
 ```shell
 git branch [branchname]
 ```
-This is create a new branch, you can name it whatever you want. For our purposes lets call it `branch1`.
+This creates a new branch, you can name it whatever you want. For our purposes lets call it `branch1`.
 
 ```shell
 git checkout [branchname]
@@ -224,4 +224,9 @@ PHEW THAT WAS A LOT, LETS REVIEW SOME STUFF
 ```shell
 git reset
 ```
-This is like the UNDO button in git.
+This is like the UNDO button in git. Let's add something to your README and commit it. Use `git rese HEAD~1` to reset back to the last commit. Hit git status it will unstage your changes and say the file is modified. This is your chance to either modify it, delete the changes.
+
+```shell
+git reset --hard
+```
+This one should not be used too lightly. This will undo all your changes and go back to the latest commit on your local repo.
