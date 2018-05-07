@@ -190,7 +190,7 @@ Cool lets get into more collaborative project, new git command now. Cloning an e
 git clone https://github.com/sonalranjit/gitgud.git sonal-gitgud
 ```
 Checkout a new branch with your name.
-Add a new line to the TEST_README.md saying "[yourname] was here" and push it to the remote.
+Create a new file to the repo [YOURNAME].md saying "[yourname] was here" and push it to the remote.
 Now you each have updated the remote repo with your respective branch, but you don't have these changes on your local repo.
 ```shell
 git fetch
@@ -204,3 +204,19 @@ git pull
 ```
 This will apply the changes you fetched from the remote on to your local branch.
 
+```shell
+git rebase [branch]
+```
+Rebasing puts whatever commits currently and automatically puts it on top of the branch's commit log. So lets try this out by rebase your branch on top of someone else's branch. You should be able to see the other person's changes in your project now. Now if someone edited same file we would still be having conflicts.
+Let's check the log `git log` you should be able to see your commit on top of the other person's commit.
+
+```shell
+git diff
+```
+This will show you the difference between the working directory and your local repo. You can also use to show differences between branches.
+`git diff master...branch`
+
+PHEW THAT WAS A LOT, LETS REVIEW SOME STUFF
+![](img/git-model.png)
+
+![](img/git-model2.png)
