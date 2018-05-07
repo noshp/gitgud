@@ -234,4 +234,12 @@ This one should not be used too lightly. This will undo all your changes and go 
 ```shell
 git stash
 ```
-Lets say you want to just peek into another branch, but you have some changes and git won't let you checkout to a new branch without commiting your changes. We'll use stash to temporarily stash changes and go into the new branch.
+Lets say you want to just peek into another branch, but you have some changes and don't want to commit a half ass work. We'll use stash to temporarily stash changes and go into the new branch.
+When you want to apply the stashed work, first lets see how many stashes we got and specify which stash to apply.
+```shell
+git stash list
+```
+When u want to apply the stash `git stash apply`
+
+Drop all the stash after you used it, `git stash clear`
+If you want to specify which stash to drop then, `git stash drop@{index}` from `git stash list`.
