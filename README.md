@@ -7,7 +7,7 @@ Totally stolen from this guys [blog](https://codeburst.io/so-wtf-is-git-fa7daa0e
 
 ## What is git
 
-Git is a version control system used to track changes on files on your computer. It is most widely used for managing and maintaining source code for software. It was built by the all mighty Linus Torvalds, he built git because it was getting too difficult to maintain the Linux project.
+Git is a version control system used to track changes on files on your computer. It is most widely used for managing and maintaining source code for software. It was built by this guy name Linus Torvalds, he built git because it was getting too difficult to maintain the Linux project.
 
 ![](img/linus-middle-finger.jpg)
 
