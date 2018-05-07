@@ -230,3 +230,8 @@ This is like the UNDO button in git. Let's add something to your README and comm
 git reset --hard
 ```
 This one should not be used too lightly. This will undo all your changes and go back to the latest commit on your local repo.
+
+```shell
+git stash
+```
+Lets say you want to just peek into another branch, but you have some changes and git won't let you checkout to a new branch without commiting your changes. We'll use stash to temporarily stash changes and go into the new branch.
