@@ -220,3 +220,8 @@ PHEW THAT WAS A LOT, LETS REVIEW SOME STUFF
 ![](img/git-model.png)
 
 ![](img/git-model2.png)
+
+```shell
+git reset
+```
+This is like the UNDO button in git.
