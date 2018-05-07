@@ -184,3 +184,23 @@ detached head yo
 ```
 The way to resolve this is to delete those lines that git has marked for us in the file.`<<<HEAD` marks the version of latest commit on the branch you are in and the `======` marks the incoming changes you are trying to merge from. Lets keep both so delete `<<<HEAD`, `======` and `>>>>` save. Let's add and commit now, stated this commit merged the detached branch into the master.
 Phew that was big one, so that is one way to handle conflicts, this was a very simple case of a merge conflict. In a more real life settings you might have merge conflicts with multiple line conflicts and multiple files.
+
+Cool lets get into more collaborative project, new git command now. Cloning an existing remote repo.
+```shell
+git clone https://github.com/sonalranjit/gitgud.git sonal-gitgud
+```
+Checkout a new branch with your name.
+Add a new line to the TEST_README.md saying "[yourname] was here" and push it to the remote.
+Now you each have updated the remote repo with your respective branch, but you don't have these changes on your local repo.
+```shell
+git fetch
+```
+`fetch` will fetch all the changes from remote but won't apply them. When you type in fetch you should've gotten a list of all new branches.
+
+Checkout to `sonalsbranch` and type `git status`, it will tell your local branch is behind by a commit and can be fast forwarded.
+One way to pull the changes from remote is `git pull`
+```shell
+git pull
+```
+This will apply the changes you fetched from the remote on to your local branch.
+
