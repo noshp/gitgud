@@ -158,4 +158,29 @@ The best practices is to delete the branch that has been merged.
 git branch -d branch1
 ```
 
-So you can merged the changes locally, but the remote master hasn't been updated. Since all the commits have been added to the ledger there won't be anything to add or commit. 
+So you can merged the changes locally, but the remote master hasn't been updated. Since all the commits have been added to the ledger there won't be anything to add or commit. If you hit `git status` it will tell you if the branch is ahead of behind from your remote repo. A simple `git push` will just push all the commits to your remote repo, verify it by checking it on github.
+
+Okay now lets start messing some things up, lets rollback to a previous version of the project. We'll use `git checkout` for this, now I've just shown you to use checkout to checkout to a branch. But you can use checkout to checkout to a commit id. Let's checkout to a first commit we did for the master branch. 
+```shell
+git checkout [commit-id]
+```
+Lets get the commit id by using `git log`, you don't need the whole string just the first 8. Once you got the first 2-3 just hit tab to autocomplete.
+The terminal will tell you now that you are in a detached HEAD state, means you have pointed the version not the latest commit on the branch, git knows this now.
+So Lets make a change in the README, add a line "detached head state".
+Let's checkout to a new branch from the commit id using `git checkout -b detached`.
+Do the whole thing `git add, git commit -m "message"`.
+
+Lets go back to the master branch now and try to merge. `git merge detached`
+Ooops we have a merge conflict, this happened because we branched off a commit that was older that the most recent one in the master branch and commit changes in between the latest master commit and one from the detached branch.
+So open up your text editor to see the conflicts, git will outline to you where the conflicts are.
+```markdown
+First line
+
+<<<<<<< HEAD
+something from branch1
+=======
+detached head yo
+>>>>>>> commiting to a detached head
+```
+The way to resolve this is to delete those lines that git has marked for us in the file.`<<<HEAD` marks the version of latest commit on the branch you are in and the `======` marks the incoming changes you are trying to merge from. Lets keep both so delete `<<<HEAD`, `======` and `>>>>` save. Let's add and commit now, stated this commit merged the detached branch into the master.
+Phew that was big one, so that is one way to handle conflicts, this was a very simple case of a merge conflict. In a more real life settings you might have merge conflicts with multiple line conflicts and multiple files.
