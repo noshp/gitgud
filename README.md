@@ -1,5 +1,7 @@
 # Wtf is git
 
+![hi](https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/2/22/Gunter_in_Sign.png/revision/latest?cb=20121115114124)
+
 So yall here to learn about this thing called git. wtf is it?
 
 ![](img/1_Wf-pkRsSmuwo_Q5ckwAGFA.png)
@@ -26,7 +28,7 @@ First thing, create a folder for the project which your are going to work off.
 
 Open up your terminal and navigate to that folder.
 
-We are going to use our first git command. 
+We are going to use our first git command.
 
 ```shell
 git init
@@ -99,10 +101,10 @@ Date:   Mon May 7 13:19:24 2018 -0400
 The log will get longer the more commits you have obviously, the things to keep note for is the commit id which is that long mumbo jumbo string `31e94c0c05d8ee7f488db92be4e687f3bf5d22ab` that is a unique string that identifies a version of the this project and allows us to go jump back into it at anytime. We'll go into this feature a little bit later.
 
 Okay once you have committed your changes they are recorded as a version referenced by the commit id. If you hit `git status` now then it will say working directory is clean meaning nothing has changed since the last commit.
-So everything you have done has been done locally on your machine, lets look into how we use `git` for collaboration. 
+So everything you have done has been done locally on your machine, lets look into how we use `git` for collaboration.
 The way we do this is we will host a copy of your local project (repository) on the web, `git` refers to this as `remote`. So we will now setup a remote location to host our project, `git` refers to this as repository (code repository).
 
-Lets use github to host our repo. Log into github and create a repository and name it `gitgud` make sure it's empty. 
+Lets use github to host our repo. Log into github and create a repository and name it `gitgud` make sure it's empty.
 Copy the url to your git repo and come back to your terminal.
 
 ```shell
@@ -123,7 +125,7 @@ Verify the push was done by checking your github and you should see your README.
 
 Cool lets add another line to the README, write whatever you want save and do the whole process of add, commit push.
 ```shell
-git add 
+git add
 git commit
 git push
 ```
@@ -150,7 +152,7 @@ git merge [branch]
 Lets get into merging, this is where we merge changes from another branch into the one you are currently sitting on.
 We are now going to merge changes into the `master` branch from the `branch1` branch.
 First we checkout to our master branch.
-Then we use `git merge branch1`, if things went nicely you will now see the changes you did to the README in `branch1` in the master branch now. 
+Then we use `git merge branch1`, if things went nicely you will now see the changes you did to the README in `branch1` in the master branch now.
 Lets see if the ledger updated but typing `git log`, the commit id should be now added to the ledger from branch1.
 
 The best practices is to delete the branch that has been merged.
@@ -160,7 +162,7 @@ git branch -d branch1
 
 So you can merged the changes locally, but the remote master hasn't been updated. Since all the commits have been added to the ledger there won't be anything to add or commit. If you hit `git status` it will tell you if the branch is ahead of behind from your remote repo. A simple `git push` will just push all the commits to your remote repo, verify it by checking it on github.
 
-Okay now lets start messing some things up, lets rollback to a previous version of the project. We'll use `git checkout` for this, now I've just shown you to use checkout to checkout to a branch. But you can use checkout to checkout to a commit id. Let's checkout to a first commit we did for the master branch. 
+Okay now lets start messing some things up, lets rollback to a previous version of the project. We'll use `git checkout` for this, now I've just shown you to use checkout to checkout to a branch. But you can use checkout to checkout to a commit id. Let's checkout to a first commit we did for the master branch.
 ```shell
 git checkout [commit-id]
 ```
